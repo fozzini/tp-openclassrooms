@@ -1,0 +1,2 @@
+Introduction
+This document is intended for users of open-source operating systems who wish to install software direct from the original authors, rather than relying solely on the software (and versions) provided by their operating system. It is written for those who are not familiar with the concept of downloading software in source-code form, providing background information about relevant commands and the process in general.
