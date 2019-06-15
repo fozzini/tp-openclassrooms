@@ -1,2 +1,14 @@
 Introduction
 This document is intended for users of open-source operating systems who wish to install software direct from the original authors, rather than relying solely on the software (and versions) provided by their operating system. It is written for those who are not familiar with the concept of downloading software in source-code form, providing background information about relevant commands and the process in general.
+
+Downloading and Security
+The usual way to download an archive file is by using a web-browser and clicking on a “download” button, clicking a link, or right-clicking a link and selecting “save as”. This downloads the file using the “http” protocol. Some sites instead make files available via the older “ftp” protocol. Many web-browsers support this too, ie clicking a link can also work here. Alternately, there are ftp client applications.
+
+The “wget” or “curl” command-line application can also be used under unix-like operating systems to fetch a file via http or ftp when the correct URL is known.
+
+Sites which publish software that is very frequently downloaded often have “mirror” sites set up, ie helpful people keep copies of the files in various places around the world. The original site usually has a list of the available mirrors, and you should choose one that is near to you. This helps reduce the cost of network bandwidth on the original publisher, and usually also lets you download faster.
+
+Both the “http” and “ftp” network protocols can be intercepted by criminals or other undesirable parties who can then modify data as it downloads. Data can also potentially be corrupted by accident while underway (though this is not common). And when using a mirror-site, it is possible that someone has modified the files there (ie that the files on the mirror are not the same as those from the original publisher). It is therefore a good idea to verify that what you downloaded is what the original publisher intended.
+
+Many sites provide an md5sum file for each archive file, which holds a checksum of the contents of the file; sometimes a single md5sums file holds checksums for a number of other files. You should always obtain an md5sums file from the original site, never a mirror. And you should download it via the secure https protocol if possible. The unix md5sum commandline tool can then be used to compute the checksum of the big archive file, and compare it to the expected values to ensure the contents are as expected.
+
